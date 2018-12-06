@@ -19,7 +19,8 @@ class CreateTopicsTable extends Migration
             $table->integer('order')->unsigned()->default(0);
             $table->text('excerpt')->nullable();
             $table->string('slug')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at');
         });
 	}
 
